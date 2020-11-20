@@ -1,0 +1,4 @@
+(1)Google cloud deployement
+(2)Kubernates implementatio
+(3) create Api gateway.
+(4)

@@ -1,0 +1,38 @@
+spring:
+   application:
+      name: User
+   jpa:
+      show:
+         sql: true
+   h2:
+      console:
+         enabled: true
+   datasource:
+      generated-unique-name: false
+      
+server:
+   port: 8100
+   compression: 
+      enabled: true
+   
+logging:
+   file: logs/user-api.log
+   
+info:
+   build:
+      artifact: user-api
+      name: UserAPI
+      description: API for User
+      version: 1.0
+
+app:   
+   auth:
+      tokensecret: 926D96C90030DD58429D2751AC1BDBBC
+      tokenExpirationMsec: 86400000 # 24 hour
+   oauth2:
+      authorizedRedirectUris:
+         - http://localhost:3000/oauth2/redirect
+         - myandroidapp://oauth2/redirect
+         - myiosapp://oauth2/redirect   
+      
+      

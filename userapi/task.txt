@@ -1,0 +1,4 @@
+(1)Create another Service as (e.g User) and other purpose(feign client)
+(2) 
+(3)postgresql implementation - after deployment in aws
+(4)update the Readme and Help.md file - after deployment in aws

@@ -1,0 +1,56 @@
+{
+    "AWSEBDockerrunVersion": 2,
+    "containerDefinitions": [
+        {
+            "name": "expensetrackerapi", 
+            "image": "nitinrai17/expensetrackerapi",
+            "hostname": "expensetrackerapi",
+            "essential": true,
+            "cpu": 1,
+            "portMappings": [
+                {
+                    "hostPort": 8080,
+                    "containerPort": 8080
+                }
+            ],
+            "memory": 256 
+        },
+		{
+			"name": "userapi", 
+			"image": "nitinrai17/userapi",
+			"hostname": "userapi",
+			"essential": true,
+			"cpu": 1,
+			"portMappings": [
+				{
+					"hostPort": 8100,
+					"containerPort": 8100
+				}
+			],
+			"memory": 256 
+        },
+        {
+            "name":"expensetrackerui",
+            "image":"nitinrai17/expensetrackerui",
+            "hostname": "expensetrackerui",
+            "essential": true,
+            "cpu": 1,
+            "portMappings": [
+                {
+                    "hostPort": 80,
+                    "containerPort": 80
+                }
+            ],
+            "links": ["expensetrackerapi", "userapi"],
+            "memory": 128,
+            "environment": [
+                {
+                    "name": "REACT_APP_API_BASE_URL",
+                    "value": "http://expensetrackerapi:8080/api/1.0"
+                }               
+                ]
+        }
+		
+    ]
+
+}
